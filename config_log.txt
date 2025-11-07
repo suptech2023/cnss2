@@ -1,0 +1,16 @@
+logging:
+  level:
+    root: INFO              # Niveau global
+    org.springframework.web: INFO
+    com.yourpackage: DEBUG  # Remplacer par ton package (ex: com.cnss)
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %highlight(%-5level) - [%thread] %cyan(%logger{36}) : %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %-5level - [%thread] %logger{36} : %msg%n"
+  file:
+    name: logs/application.log   # Fichier de log généré à la racine du projet
+
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB        # Taille max avant rotation
+      max-history: 7             # Conserver les logs des 7 derniers jours
+      clean-history-on-start: true
